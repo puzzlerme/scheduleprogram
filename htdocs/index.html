@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' /> -->
+    <title>Schedule - Keys School</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Keys School Schedule Program">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ME">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=2">
+    <!--<link rel="manifest" href="/favicons/site.webmanifest?v=2">
+    <!--Adding this back in gives "Manifest: Line: 1, column: 1, Syntax error." -->
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=2" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicons/favicon.ico?v=2">
+    <meta name="msapplication-TileColor" content="#558ed5">
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml?v=2">
+    <meta name="theme-color" content="#558ed5">
+
+    <script>
+        // TODO maybe make the auto-update and the darkmode switch change here?
+        (() => {
+            var themes = {
+                // TODO custom themes (preset and ability to make own)
+                light: {
+                    'color-fg': '#313639',
+                    'color-bg': '#FAF9F6',
+                    'button-bg': '#fff',
+                    'button-fg': '#3c4043',
+                    'button-hover-bg': '#F6F9FE',
+                    'button-hover-fg': '#174ea6',
+                    'dropdown-bg': '#fff',
+                    'dropdown-fg': '#474747',
+                    'dropdown-shadow': '0 0 2px rgb(204, 204, 204)',
+                    'dropdown-select': '#888',
+                    'dropdown-hover-shadow': 'box-shadow: 0 0 4px rgb(204, 204, 204)',
+                    'dropdown-active': '#f8f8f8',
+                    'dropdown-active-hover-shadow': '0 0 4px rgb(204, 204, 204)',
+                    'dropdown-active-hover-bg': '#f8f8f8',
+                    'dropdown-menu-shadow': '0 1px 2px rgb(204, 204, 204)',
+                    'dropdown-menu-bg': '#fff',
+                    'dropdown-menu-li-hover-bg': '#f2f2f2',
+                    'dropdown-menu-li-active-bg': '#e2e2e2',
+                },
+                dark: {
+                    'color-fg': '#f3f3f1',
+                    'color-bg': '#282c2e',
+                    'button-bg': '#3c4043',
+                    'button-fg': '#fff',
+                    'button-hover-bg': '#030c1a',
+                    'button-hover-fg': '#a3c1f2',
+                    'dropdown-bg': '#474747',
+                    'dropdown-fg': '#fff',
+                    'dropdown-shadow': '0 0 2px rgb(82, 82, 82)',
+                    'dropdown-select': '#aaa',
+                    'dropdown-hover-shadow': 'box-shadow: 0 0 4px rgb(82, 82, 82)',
+                    'dropdown-active': '#070707',
+                    'dropdown-active-hover-shadow': '0 0 4px rgb(82, 82, 82)',
+                    'dropdown-active-hover-bg': '#070707',
+                    'dropdown-menu-shadow': '0 1px 2px rgb(82, 82, 82)',
+                    'dropdown-menu-bg': '#474747',
+                    'dropdown-menu-li-hover-bg': '#7c7c7c',
+                    'dropdown-menu-li-active-bg': '#747474',
+                },
+                christmas: {
+                    'color-fg': '#fff',
+                    'color-bg': '#1E792C',
+                    'button-bg': '#c54245',
+                    'button-fg': '#fff',
+                    'button-hover-bg': '#601e1f',
+                    'button-hover-fg': '#bbd6bf',
+                    'dropdown-bg': '#8d2b2e',
+                    'dropdown-fg': '#fff',
+                    'dropdown-shadow': '0 0 2px rgb(215, 125, 127)',
+                    'dropdown-select': '#c17072',
+                    'dropdown-hover-shadow': 'box-shadow: 0 0 4px rgb(215, 125, 127)',
+                    'dropdown-active': '#601e1f',
+                    'dropdown-active-hover-shadow': '0 0 4px rgb(215, 125, 127)',
+                    'dropdown-active-hover-bg': '#601e1f',
+                    'dropdown-menu-shadow': '0 1px 2px rgb(215, 125, 127)',
+                    'dropdown-menu-bg': '#c54245',
+                    'dropdown-menu-li-hover-bg': '#d77d7f',
+                    'dropdown-menu-li-active-bg': '#d77d7f',
+                }
+            }; // Get root <html> node style interface
+            var root = document.documentElement.style;
+            var darkMatcher = window.matchMedia('(prefers-color-scheme: dark)');
+            var prefersColorScheme = darkMatcher.matches ? 'dark' : 'light';
+            var savedTheme = localStorage.getItem('themeName');
+
+            window.__onSetTheme = function() {};
+
+            window.__setTheme = function(themeName) {
+                window.localStorage.setItem('themeName', themeName);
+                var theme = themes[themeName];
+                Object.keys(theme).forEach(function(key) {
+                    // Set global custom properties on root element
+                    root.setProperty('--' + key, theme[key]);
+                });
+
+                window.__onSetTheme(themeName);
+
+                window.__currentTheme = themeName;
+            };
+            window.__setTheme(savedTheme || prefersColorScheme);
+
+            darkMatcher.addListener(function() {
+                window.__setTheme(darkMatcher.matches ? 'dark' : 'light');
+            });
+        })();
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-weight: 400;
+            font-style: normal;
+            src: local('Material Icons'), local('MaterialIcons-Regular'), url('OTHER/MaterialIcons-Regular.ttf') format('truetype');
+        }
+        
+        .material-icons {
+            display: inline-block;
+            font-family: 'Material Icons';
+            font-size: 24px;
+            /* Preferred icon size */
+            font-weight: normal;
+            line-height: 1;
+            font-style: normal;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+            /* Support for IE. */
+            font-feature-settings: 'liga';
+        }
+        
+        body {
+            color: var(--color-fg);
+            background: var(--color-bg);
+            transition: 0.2s linear;
+        }
+        
+        #image {
+            position: absolute;
+            top: 100px;
+            left: 600px;
+            object-fit: contain;
+            /* TODO float: right; */
+            width: 600px;
+            height: 400px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .crop-time {
+            width: 93.5px;
+            height: 401px;
+            overflow: hidden;
+            /*border: 1px solid black;*/
+        }
+        
+        .crop-time-img {
+            width: 830px;
+            height: 642px;
+            margin: -77px 0 0 -52px;
+        }
+        
+        .crop-day {
+            width: 104.5px;
+            /* FIXME accurate crops for day and time
+            originally 105.5
+            find an actual proper way to check for right scale
+            not all days are in the right area, change that as well
+            currerntly causes middle line to change size (and seems to change opacity) */
+            height: 401px;
+            overflow: hidden;
+            /*border: 1px solid black;*/
+        }
+        
+        .crop-day-img {
+            width: 830px;
+            height: 642px;
+        }
+        
+        ul.image-gallery {
+            list-style: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul.image-gallery:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        ul.image-gallery li {
+            list-style: none;
+            display: block;
+            float: left;
+        }
+        
+        ul.image-gallery li img {
+            display: block;
+        }
+        
+        html * {
+            font-family: "Google Sans", Roboto, Arial, sans-serif;
+        }
+        
+        img.dark-theme {
+            filter: brightness(85%);
+            filter: contrast(85%);
+        }
+        
+        .pretty {
+            /* I wish it could be 16px, but it then gets distracted: https://github.com/lokesh-coder/pretty-checkbox/issues/45 */
+            font-size: 18px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="OTHER/Pretty Checkbox CSS Style Sheet.css">
+    <link rel="stylesheet" href="OTHER/Select Class CSS Style Sheet.css">
+    <link rel="stylesheet" href="OTHER/Button CSS Style Sheet.css">
+    <link rel="stylesheet" href="OTHER/Settings CSS Style Sheet.css">
+
+</head>
+<!---  onload="pageLoaded()" style="display: none;" --->
+
+<body>
+
+    <!--- 980px by 812px : 73.5px by 60.9px --->
+    <!--- <img id="nowifi" src="OTHER/nowifi.png" width=73.5px height=60.9px style="float:right; top: 0px;"></img>
+    <button id="imageformat" class="button-17" role="button" onclick="changeImageFormat()" style="float: right;">Change Image Format</button> --->
+    <button id="customschedule" class="button-17" role="button" onclick="customSchedule()" style="float: right;">Choose Custom Schedule: </button>
+
+    <h1 id="scheduleHeader">Schedule</h1>
+
+    <div class="container">
+        <span class="choose">Class: </span>
+        <div class="dropdown" id="select-class" style="font-size: 95%;">
+            <div class="select">
+                <span>Select Class</span>
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden" name="class">
+            <ul class="dropdown-menu">
+                <li class="dropdown-li" id="8A">8A</li>
+                <li class="dropdown-li" id="8B">8B</li>
+                <li class="dropdown-li" id="7A">7A</li>
+                <li class="dropdown-li" id="7B">7B</li>
+                <li class="dropdown-li" id="6A">6A</li>
+                <li class="dropdown-li" id="6B">6B</li>
+                <li class="dropdown-li" id="5A">5A</li>
+                <li class="dropdown-li" id="5B">5B</li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="display: inline-block; width: 266px;">Date: <span id="datetime"></span></p>
+
+    <!--- <div style="display: inline-block;" class="pretty p-icon p-curve p-smooth">
+        <input type="checkbox" id="autoupdate" name="autoUpdate" onclick="checkboxClicked()" />
+        <div class="state p-primary">
+            <i class="icon material-icons">autorenew</i>
+            <label>Auto-Check Updates</label>
+        </div>
+    </div> --->
+
+    <br>
+    <p style="display: contents;">Day of the Week: <span id="dayOfTheWeek"> </span></p><br>
+    <!-- TODO make a feature (button toggle) that allows you to check the next days schedule if its after schools ended -->
+    <p style="display: inline-block; width: 266px;">Letter Day: <span id="letterDay"> </span></p>
+
+    <div style="display: inline-block;" class="pretty p-switch p-fill">
+        <input type="checkbox" id="darkmode" name="darkMode" onclick="toggleDarkMode()" />
+        <div class="state">
+            <label>Dark Mode</label>
+        </div>
+    </div>
+
+    <!--<button id="settingsbutton" class="button-17" role="button" onclick="settings()" style="float: right;">⚙️ Settings (not working yet)</button>-->
+
+    <!--Start of Modal -->
+<div class="modal" style="position: absolute; top: 100px; right: 0px;">
+    <input id="modal__trigger" type="checkbox" class="input" />
+    <label for="modal__trigger">Settings</label>
+    <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc" style="font-size: 35px;">
+        <div class="modal__wrap">
+            <label for="modal__trigger">&#10006;</label>
+            <h2 id="modal__title">Settings</h2>
+            <p id="modal__desc"></p>
+            <!--<div style="display: inline-block;" class="pretty p-switch p-fill">
+                <input type="checkbox" id="nextDayIfAfterSchoolCheckbox" name="nextDayIfAfterSchoolCheckbox" onclick="nextDayIfAfterSchool = document.getElementById(nextDayIfAfterSchoolCheckbox).checked; optionalNextDays();" />
+                <div class="state">
+                    <label>Show Next Day After 3:30pm</label>
+                </div>
+            </div>
+            <div style="display: inline-block;" class="pretty p-switch p-fill">
+                <input type="checkbox" id="skipWeekendsCheckbox" name="skipWeekendsCheckbox" onclick="skipWeekends = document.getElementById(skipWeekendsCheckbox).checked; optionalNextDays();" />
+                <div class="state">
+                    <label>Show Mondays on Weekends</label>
+                </div>
+            </div>-->
+            <p style="text-align: center;">Show Next Day After 3:30pm
+            <input style="height: 25px; width: 25px;" type="checkbox" id="nextDayIfAfterSchoolCheckbox" name="nextDayIfAfterSchoolCheckbox" onchange="localSettings[0] = this.checked; localStorage.setObj('settings', localSettings); optionalNextDays();" /> </p>
+            <p style="text-align: center;">Show Monday on Weekends
+            <input style="height: 25px; width: 25px;" type="checkbox" id="skipWeekendsCheckbox" name="skipWeekendsCheckbox" onchange="localSettings[1] = this.checked; localStorage.setObj('settings', localSettings); optionalNextDays();" /> </p>
+            <p style="text-align: center;">Show Bounding Box for Current Class
+            <input style="height: 25px; width: 25px;" type="checkbox" id="boundingBoxCheckbox" name="boundingBoxCheckbox" onchange="localSettings[2] = this.checked; localStorage.setObj('settings', localSettings); doBoundingBox();" /> </p>
+            <p style="text-align: center;">Extra Days
+            <input style="height: 25px;" type="range" min="0" max="5" value="0" id="extraDaysSlider" name="extraDaysSlider" onchange="localSettings[localSettings.length - 1] = this.value; localStorage.setObj('settings', localSettings); setupExtraDays();" /> </p>
+        </div>
+    </div>
+</div>
+<!--End of Modal -->
+
+    <!-- 416px width originally -->
+    <div id="outlinediv" style="position: absolute; width: 194px;"></div>
+
+    <ul class="image-gallery" id="image-gallery">
+        <li>
+            <div class="crop-time">
+                <img id="time" class="crop-time-img">
+            </div>
+        </li>
+        <li>
+            <div class="crop-day" id="crop-day">
+                <img id="day" class="crop-day-img">
+            </div>
+        </li>
+        <li id="extraDayImages">
+        </li>
+        <li style="white-space: pre-wrap;">
+            <div>
+                <button class="button-17" role="button" onclick="today()">Today</button>
+            </div>
+            <div>
+                <button class="button-17" role="button" onclick="nextDay()">Next Day</button>
+            </div>
+            <div>
+                <button class="button-17" role="button" onclick="previousDayFunction()">Previous Day</button>
+            </div>
+            <!--- <div>
+                <button class="button-17" role="button" onclick="resetLetterDays()">Reset Letter Days</button>
+            </div> --->
+        </li>
+    </ul>
+    
+    <img id="image" style="display: none;" img>
+    <br>
+    <!---
+            <button class="button-17" role="button" onclick="previousDayFunction()">Previous Day</button>
+            <button class="button-17" role="button" onclick="nextDay()">Next Day</button>
+            <button class="button-17" role="button" onclick="resetLetterDays()">Reset Letter Days</button>
+            
+            <label for="sections">Choose a Section:</label>
+            <select name="sections" id="sections" onchange="changeSection(this.value);">
+              <option value="none" selected disabled>Choose a Section</option>
+              <option value="8A">8A</option>
+              <option value="8B">8B</option>
+              <option value="7A">7A</option>
+              <option value="7B">7B</option>
+              <option value="6A">6A</option>
+              <option value="6B">6B</option>
+              <option value="5A">5A</option>
+              <option value="5B">5B</option>
+            </select>
+            
+            <div class="pretty p-curve p-smooth">
+                <input type="checkbox" id="autoupdate" name="autoUpdate" onclick="checkboxClicked()">
+                <div class="state p-primary">
+                    <label>Auto-Check Updates</label>
+                </div>
+            </div>
+    --->
+
+    <script src="OTHER/jQuery 3.6.0.js"></script>
+    <script src="OTHER/sweetalert2@11.js"></script>
+
+    <script>
+        Storage.prototype.setObj = function(key, obj) {
+            return this.setItem(key, JSON.stringify(obj))
+        }
+        Storage.prototype.getObj = function(key) {
+            return JSON.parse(this.getItem(key))
+        }
+
+        // TODO teacher schedules (custom user-inputted ones) - cant use file input because js, instructions + allow access to that folder
+
+        // TODO add a arrow to show what the current period is (and maybe text?) or a line that goes down (before and after day) or highlight box over period
+
+        // TODO make settings page better
+
+        // TODO convert to a website as well, make mobile friendly
+
+        // TODO maybe add an API for g-classroom and g-calendar?
+
+        // TODO make file names not changeable
+
+        function toggleDarkMode() {
+            if (darkmode.checked) {
+                localStorage.setItem("themeName", "dark")
+                __setTheme("dark");
+            } else {
+                localStorage.setItem("themeName", "light")
+                __setTheme("light");
+            }
+        }
+
+        if (__currentTheme == "dark") {
+            darkmode.checked = true;
+        }
+
+        /* var OS = "Your OS";
+        if (navigator.appVersion.indexOf("Win") != -1) OS =
+            "Windows OS";
+        if (navigator.appVersion.indexOf("Mac") != -1) OS =
+            "MacOS";
+        if (navigator.appVersion.indexOf("X11") != -1) OS =
+            "UNIX OS";
+        if (navigator.appVersion.indexOf("Linux") != -1) OS =
+            "Linux OS";
+
+        if (!(OS == "MacOS")) {
+            alert("This program is built for MacOS. " + OS + " isn't supported.")
+        } */
+
+        var localSettings = localStorage.getObj('settings') || new Array(true, true, false, 0);
+        if (localSettings.length != 4) {
+            localSettings = new Array(true, true, false, 0);
+        }
+        document.getElementById('nextDayIfAfterSchoolCheckbox').checked = localSettings[0];
+        document.getElementById('skipWeekendsCheckbox').checked = localSettings[1];
+        document.getElementById('boundingBoxCheckbox').checked = localSettings[2];
+        document.getElementById('extraDaysSlider').value = localSettings[localSettings.length - 1];
+        localStorage.setObj('settings', localSettings);
+
+        var internetStatus;
+        //checkInternetStatus();
+
+        function checkInternetStatus() {
+            if (navigator.onLine) {
+                internetStatus = true;
+                const script = document.createElement('script');
+                script.src = 'https://output.jsbin.com/mijixiv/latest.js';
+                document.head.appendChild(script);
+                script.addEventListener('load', function() {
+                    checkForUpdate();
+                });
+            } else {
+                internetStatus = false;
+            }
+        }
+
+        /*autoupdate = document.getElementById('autoupdate');
+        //localAutoUpdateChecked = localStorage.getItem("autoUpdate");
+
+        //nowifi = document.getElementById("nowifi");
+
+        function checkAutoUpdate() {
+            if (localAutoUpdateChecked == "false") {
+                autoupdate.checked = false;
+                //console.log("false");
+            } else if (localAutoUpdateChecked == "true") {
+                autoupdate.checked = true;
+                //console.log("true");
+            } else {
+                localStorage.setItem("autoUpdate", autoupdate.checked);
+                //console.log("heh?");
+            }
+        }
+
+        function checkForUpdate() {
+            if (autoupdate.checked) {
+                if (!(currentVersion == version)) {
+                    //alert('New version available. Please go to your "Schedule Program" folder and execute (double click) the "Check for Updates.command" file.')
+                    Swal.fire(
+                        'Update Available',
+                        'Please go to your "Schedule Program" folder and execute (double click) the "Check for Updates.command" file.',
+                        'info'
+                    )
+                }
+            }
+        }
+
+        function checkboxClicked() {
+            if (autoupdate.checked) {
+                localStorage.setItem("autoUpdate", true);
+                //console.log("now true");
+            } else {
+                localStorage.setItem("autoUpdate", false);
+                //console.log("now false");
+            }
+            if (internetStatus) {
+                checkForUpdate();
+            }
+        }
+
+        //checkAutoUpdate();*/
+
+        var countNum = 1;
+
+        const doesImageExist = (url) => new Promise((resolve, reject) => {
+            try {
+                const img = document.createElement('img');
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            } catch (e) {
+                reject(e);
+            }
+        });
+
+        var i = 0;
+        var exists = true;
+        async function countImages() {
+            try {
+                while (exists) {
+                    i++;
+                    let imageSource = 'Photos/image(' + i + ').' + currentFormat;
+                    exists = await doesImageExist(imageSource);
+                    //console.log(i);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+            localStorage.setItem("imageCount", i - 1);
+            if (i < 2) {
+                //document.getElementById('image').remove();
+                document.getElementById("image").style.display = 'none';
+            } else {
+                chooseRandomImage(i, 'Photos', currentFormat);
+            }
+        }
+
+        var worked = false;
+        async function smartCheckImages() {
+            try {
+                let testNumber = localImageCheck;
+                //console.log(testNumber);
+                let test1Src = 'Photos/image(' + testNumber + ').' + currentFormat;
+                testNumber++;
+                let test2Src = 'Photos/image(' + testNumber + ').' + currentFormat;
+                let test1 = await doesImageExist(test1Src);
+                let test2 = await doesImageExist(test2Src);
+                //console.log("Src 1: " + test1Src + " Src 2: " + test2Src);
+                //console.log("Test 1: " + test1 + " Test 2: " + test2);
+                if (test1 && !test2) {
+                    worked = true;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+            if (worked) {
+                chooseRandomImage(localImageCheck);
+                //console.log("worked");
+            } else {
+                countImages();
+                //console.log("didnt work");
+            }
+        }
+
+        //var localImageCheck = localStorage.getItem("imageCount");
+
+        var qd = {};
+        if (location.search) location.search.substr(1).split`&`.forEach(item => {let [k,v] = item.split`=`; v = v && decodeURIComponent(v); (qd[k] = qd[k] || []).push(v)})
+        if (qd.imagefolder) {
+            let imageLengths = {FolderName:2};
+            let imageFormats = {FolderName: 'jpeg'};
+            if (imageLengths[qd.imagefolder[0]] && imageFormats[qd.imagefolder[0]]) {
+                chooseRandomImage(imageLengths[qd.imagefolder[0]], qd.imagefolder[0], imageFormats[qd.imagefolder[0]]);
+            }
+        }
+
+        function chooseRandomImage(number, folder, format) {
+            //console.log(new Array(number, folder, format));
+            // IMAGES SHOULD START AT image0 AND GO TO imageNUMBER
+            //var randomNum = Math.floor(Math.random() * (number - 1));
+            var randomNum = Math.round(Math.random() * number);
+            //console.log("Random Number: " + randomNum);
+            document.getElementById("image").src = folder + '/image' + (randomNum) + '.' + format;
+            if (randomNum != -1) {
+                document.getElementById("image").style.display = 'inherit';
+            }
+        }
+
+        //currentFormat = localStorage.getItem("imageFormat");
+        imageformatbutton = document.getElementById('imageformat');
+
+        function validateImageFormat() {
+            if (!currentFormat) {
+                currentFormat = "jpeg";
+                localStorage.setItem('imageFormat', currentFormat);
+                imageformatbutton.innerHTML = "Change Image Format: " + currentFormat;
+                changeImageFormat();
+            } else {
+                imageformatbutton.innerHTML = "Change Image Format: " + currentFormat;
+                if (!localImageCheck) {
+                    countImages();
+                } else {
+                    smartCheckImages();
+                }
+            }
+        }
+        //validateImageFormat();
+
+        function customSchedule() {
+            let customSchedule;
+            async function getCustomSchedule() {
+
+                const { value: scheduleSelected } = await Swal.fire({
+                title: 'Enter the custom schedule name',
+                input: 'text',
+                inputLabel: 'Custom Schedule',
+                showCancelButton: true,
+                inputValidator: (value) => {
+                    if (!value) {
+                    return 'You need to input a schedule name.'
+                    } else if (!validSections.includes(value)) {
+                    return 'You need to input a valid schedule name.'
+                    }
+                }
+                })
+
+                customSchedule = scheduleSelected;
+
+            }
+
+            getCustomSchedule().then(() => {
+                if (validSections.includes(customSchedule)) {
+                    changeSection(customSchedule);
+                }
+            })
+        }
+
+        function changeImageFormat() {
+            let newFormat;
+            async function getImageFormat() {
+
+                const { value: imageFormat } = await Swal.fire({
+                title: 'Enter the image format',
+                input: 'text',
+                inputLabel: 'Image Format',
+                showCancelButton: true,
+                inputValidator: (value) => {
+                    if (!value) {
+                    return 'You need to input a format.'
+                    }
+                }
+                })
+
+                //const {
+                //    value: imageFormat
+                //} = await Swal.fire({
+                //    title: 'Select Image Format',
+                //    input: 'select',
+                //    inputOptions: {
+                //        'jpeg': '.jpeg',
+                //        'jpg': '.jpg',
+                //        'webp': '.webp',
+                //        'png': '.png',
+                //    },
+                //    inputPlaceholder: 'Select your preferred image format.',
+                //    showCancelButton: false,
+                //})
+
+                newFormat = imageFormat;
+
+            }
+
+            getImageFormat().then(() => {
+                currentFormat = newFormat;
+                localStorage.setItem("imageFormat", currentFormat);
+                imageformatbutton.innerHTML = "Change Image Format: " + currentFormat;
+                countImages();
+            })
+        }
+
+        // 374 by 1590
+        // 422 by 1590
+        // 0.25 size multiplier
+
+        var dt = new Date(new Date().toDateString());
+
+        //var dt = new Date();
+
+        //console.log(dt);
+
+        //extraDays = 0;
+
+        function setupExtraDays() {
+            //let imggal = document.getElementById('image-gallery');
+            let imggal = document.getElementById('extraDayImages');
+
+            imggal.replaceChildren();
+
+            function removeAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            //removeAllChildNodes(imggal);
+            for (let i = 0; i < localSettings[localSettings.length - 1]; i++) {
+                let li = document.createElement('li');
+                let div = document.createElement('div');
+                let img = document.createElement('img');
+
+                div.classList.add('crop-day');
+                img.classList.add('crop-day-img');
+
+                img.id = "day_img_" + i;
+
+                div.appendChild(img);
+                li.appendChild(div);
+
+                //console.log(li);
+
+                //console.log(imggal);
+
+                imggal.insertBefore(li, imggal.childNodes[(i)]);
+            }
+
+            optionalNextDays();
+        }
+
+        setupExtraDays();
+
+        // TODO make these are checkboxes in settings
+        //var nextDayIfAfterSchool = true;
+        //var skipWeekends = true;
+
+        function optionalNextDays() {
+            dt = new Date(new Date().toDateString());
+            let now = new Date();
+            if (localSettings[0]) {
+                if ((now.getHours() >= 15 && now.getMinutes() >= 30) || now.getHours() >= 16) {
+                    dt.setDate(dt.getDate() + 1);
+                    //console.log('3');
+                }
+            }
+            //console.log(skipWeekends);
+            if (localSettings[1]) {
+                //console.log(skipWeekends);
+                if (dt.getDay() == 6) {
+                   dt.setDate(dt.getDate() + 2);
+                    //console.log('1');
+                } else if (dt.getDay() == 0) {
+                    dt.setDate(dt.getDate() + 1);
+                    //console.log('2');
+                }
+            }
+
+            changeDate();
+            changeDay();
+            getLetterDay();
+        }
+        
+        optionalNextDays();
+
+        function today() {
+            dt = new Date(new Date().toDateString());
+            optionalNextDays();
+        }
+
+        // TODO make next class outline a setting
+        let boundingBoxTimeout;
+        function nextClass() {
+            var classHours = [8, 9, 10, 10, 11, 12, 12, 13, 14, 15, 16];
+            var classMins = [40, 10, 10, 30, 25, 25, 50, 15, 15, 15, 0];
+
+            var now = new Date();
+            var id = 0;
+            var millisTill = new Date(now.getFullYear(), now.getMonth(), now.getDate(), classHours[id], classMins[id], 0, 0) - now;
+            while (millisTill < 0) {
+                // WHILE millisTill but then uses id??
+                id++;
+                //console.log("id: " + id);
+                if (id == classHours.length) {
+                    millisTill = -1;
+                    break;
+                }
+                millisTill = new Date(now.getFullYear(), now.getMonth(), now.getDate(), classHours[id], classMins[id], 0, 0) - now;
+            }
+            //console.log(millisTill);
+            //console.log(new Date(now.getFullYear(), now.getMonth(), now.getDate(), classHours[id], classMins[id], 0, 0));
+
+            //console.log('Millis Till: ' + millisTill);
+            //console.log('Hours: ' + classHours[id]);
+            //console.log('Mins: ' + classMins[id]);
+            //console.log('ID: ' + id);
+
+            outlinediv = document.getElementById('outlinediv');
+            // TODO make outline color and stuff a setting
+            // FIXME changing the border makes it not flush with the schedule
+            let outline = "solid rgb(0, 0, 255) 2px";
+            //outlinediv.style.shadow = 'box-shadow: 120px 80px 40px 20px #0ff;'
+            outlinediv.style.border = outline;
+
+            if (millisTill < 0) {
+                outlinediv.style.border = "none";
+                //console.log(outlinediv.border);
+                return;
+            }
+            /*if (new Date(dt.toDateString()) != new Date(new Date().toDateString())) {
+                outlinediv.style.border = "none";
+                return;
+            }*/
+            if (id == 0) {
+                outlinediv.style.border = "none";
+                //console.log("no border");
+            }
+            if (!showBoundingBox) {
+                outlinediv.style.border = "none";
+                return;
+            }
+
+            boundingBoxTimeout = setTimeout(nextClass, millisTill);
+
+            classHeight = [146, 209, 75, 210, 208, 60, 69, 203, 208, 56];
+            classTop = [254, 292, 345, 365, 418, 473, 491, 511, 564, 618];
+
+            outlinediv.style.height = classHeight[id - 1] * 0.25 + 'px';
+            outlinediv.style.top = classTop[id - 1] + 'px';
+        }
+
+        let showBoundingBox = localSettings[2];
+        function doBoundingBox() {
+            showBoundingBox = document.getElementById("boundingBoxCheckbox").checked;
+            if (showBoundingBox) {
+                nextClass();
+            } else {
+                outlinediv.style.border = "none";
+                clearTimeout(boundingBoxTimeout);
+            }
+        }
+
+        doBoundingBox();
+
+        //var previousDay = localStorage.getItem("previousDay");
+        //var previousLetter = localStorage.getItem("previousLetter");
+
+        // THIS IS WHERE DATE AND DAY IS SET
+        // KEYWORDS TO COMMAND+F FIND THIS: SET TIME = SET DAY = SET DATE = NEW DATE = DAY = TIME = DATE
+        // YEAR, MONTH (start at 0), DAY
+        var previousDay = new Date(2022, 3, 25);
+        var previousLetter = "D";
+        var noSchoolDates = [new Date(2022, 4, 30)];
+        var noSchoolDatesString = [];
+        for (let i = 0; i < noSchoolDates.length; i++) {
+            noSchoolDatesString.push(noSchoolDates[i].toDateString());
+        }
+
+        if (!previousLetter || !previousDay || (previousLetter != "A" && previousLetter != "B" && previousLetter != "C" && previousLetter != "D" && previousLetter != "E" && previousLetter != "F")) {
+            resetLetterDays();
+        } else {
+            previousDay = new Date(previousDay);
+        }
+
+        function resetLetterDays() {
+            //console.log(previousLetter);
+            //previousLetter = prompt("Enter the current letter day:");
+            let newLetter;
+            async function getPreviousLetterDay() {
+                const {
+                    value: letterSelected
+                } = await Swal.fire({
+                    title: 'Select Letter Day',
+                    input: 'select',
+                    inputOptions: {
+                        'A': 'A',
+                        'B': 'B',
+                        'C': 'C',
+                        'D': 'D',
+                        'E': 'E',
+                        'F': 'F'
+                    },
+                    inputPlaceholder: 'Select the current letter day',
+                    showCancelButton: false,
+                })
+
+                newLetter = letterSelected;
+
+            }
+
+            getPreviousLetterDay().then(() => {
+                //Swal.fire(`You selected: ${newLetter}`)
+                if (newLetter != "A" && newLetter != "B" && newLetter != "C" && newLetter != "D" && newLetter != "E" && newLetter != "F") {
+                    //resetLetterDays();
+                } else {
+                    previousLetter = newLetter;
+                    previousDay = new Date(dt);
+                    localStorage.setItem("previousDay", dt);
+                    localStorage.setItem("previousLetter", previousLetter);
+                    getLetterDay();
+                }
+            })
+        }
+
+        var localSection = localStorage.getItem("storageSection");
+        ddm = $(".dropdown-menu");
+
+        function changeSection(value) {
+            localSection = value;
+            ddm.parents('.dropdown').find('span').text(value);
+            ddm.parents('.dropdown').find('input').attr('value', value);
+            customschedule.innerHTML = "Change Custom Schedule: " + value;
+            document.getElementById("scheduleHeader").innerHTML = localSection + " Schedule";
+            document.getElementById('time').src = 'Schedules/' + localSection + '%20Schedule.webp?i=2022';
+            document.getElementById('day').src = 'Schedules/' + localSection + '%20Schedule.webp?i=2022';
+            localStorage.setItem("storageSection", localSection);
+            getLetterDay();
+        }
+
+        var validSections = new Array();
+        validSections[0] = "8A";
+        validSections[1] = "8B";
+        validSections[2] = "7A";
+        validSections[3] = "7B";
+        validSections[4] = "6A";
+        validSections[5] = "6B";
+        validSections[6] = "5A";
+        validSections[7] = "5B";
+        validSections[8] = "Ranney";
+        validSections[9] = "Chiang";
+
+        function validSectionCheck() {
+            let index = -1;
+
+            for (let i = 0; i < validSections.length; i++) {
+                //console.log(validSections[i]);
+                if (validSections[i] == localSection) {
+                    index = i;
+                }
+            }
+
+            if (index > -1) {
+                //document.getElementById("sections").selectedIndex = index;
+                changeSection(localSection);
+                //document.getElementById('sections').value = localSection;
+            } else {
+                Swal.fire(
+                    'Choose a Section',
+                    'You have no section chosen. Please click the button that says "Select Class" and choose your section.',
+                    'warning'
+                )
+                //ddm.parents('.dropdown').find('input').val() = localSection;
+                //document.getElementById('sections').value = localSection;
+            }
+            //console.log(index);
+        }
+
+        validSectionCheck();
+
+        function changeDate() {
+            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+        }
+
+        function changeDay() {
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            document.getElementById("dayOfTheWeek").innerHTML = weekday[dt.getDay()];
+        }
+
+        function nextDay() {
+            if (dt.getDay() == 5) {
+                dt.setDate(dt.getDate() + 3);
+            } else {
+                dt.setDate(dt.getDate() + 1);
+            }
+            // TODO make an option for this
+            while (((dt.getDay() == "0") || (dt.getDay() == "6") || (noSchoolDatesString.includes(dt.toDateString())))) {
+                dt.setDate(dt.getDate() + 1);
+            }
+            changeDate();
+            changeDay();
+            getLetterDay();
+        }
+
+        function previousDayFunction() {
+            if (dt.getDay() == 1) {
+                dt.setDate(dt.getDate() - 3);
+                //console.log("-3");
+            } else {
+                dt.setDate(dt.getDate() - 1);
+                //console.log("-1");
+            }
+            while (((dt.getDay() == "0") || (dt.getDay() == "6") || (noSchoolDatesString.includes(dt.toDateString())))) {
+                dt.setDate(dt.getDate() - 1);
+            }
+            changeDate();
+            changeDay();
+            getLetterDay();
+        }
+
+        function checkOffset(offset) {
+            return offset == previousLetter;
+        }
+
+        function allowPreviousDays(currentDay) {
+            if (currentDay >= previousDay) {
+                var numOfDates1 = dayDifference(previousDay, currentDay);
+            } else {
+                currentDay.setDate(currentDay.getDate());
+                var numOfDates1 = -(dayDifference(currentDay, previousDay));
+            }
+            return numOfDates1;
+        }
+
+        function getLetterDay() {
+            //var testDate = new Date(dt);
+            //var numOfDates = getBusinessDatesCount(previousDay,testDate);
+            var thingyNumber = allowPreviousDays(dt);
+            //console.log("Thingy: " + thingyNumber);
+            //console.log("Normal? " + (dt >= previousDay));
+            //console.log("Previous: " + previousDay + " DT: " + dt);
+            var letterDayList = new Array(6);
+            letterDayList[0] = "A";
+            letterDayList[1] = "B";
+            letterDayList[2] = "C";
+            letterDayList[3] = "D";
+            letterDayList[4] = "E";
+            letterDayList[5] = "F";
+            offsetButWhenIDontKnowWhatToDo = 0;
+            offset = letterDayList.findIndex(checkOffset) - offsetButWhenIDontKnowWhatToDo;
+            numOfDates = thingyNumber;
+            numOfDates = numOfDates + offset;
+            let finalIndex = ((numOfDates % 6) + 6) % 6
+            var letterDay1 = letterDayList[finalIndex];
+            document.getElementById("letterDay").innerHTML = letterDay1;
+
+            document.title = letterDayList[finalIndex] + ' Day - Schedule - Keys School'
+
+            //document.getElementById('time').src = 'Schedules/' + localSection + '%20Schedule.webp';
+            //document.getElementById('day').src = 'Schedules/' + localSection + '%20Schedule.webp';
+
+            var letterDayToMargin = new Array(6);
+            letterDayToMargin[0] = -146;
+            letterDayToMargin[1] = -251.5;
+            letterDayToMargin[2] = -357;
+            letterDayToMargin[3] = -462.5;
+            letterDayToMargin[4] = -568;
+            letterDayToMargin[5] = -673.5;
+
+            let quickVar = "-77px 0 0 " + letterDayToMargin[finalIndex] + "px";
+            document.getElementById('day').style.margin = quickVar;
+
+            var newFinalIndex = finalIndex;
+
+            for (let i = 0; i < localSettings[localSettings.length - 1]; i++) {
+                //console.log('Extra day added.');
+
+                let dayimg = document.getElementById("day_img_" + i);
+
+                dayimg.src = 'Schedules/' + localSection + '%20Schedule.webp?i=2022';
+                if (newFinalIndex == 5) {
+                    newFinalIndex = 0;
+                } else {
+                    newFinalIndex++;
+                }
+                dayimg.style.margin = "-77px 0 0 " + letterDayToMargin[newFinalIndex] + "px";
+                //console.log(img);
+                //console.log(div);
+            }
+        }
+
+        function dayDifference(startDate, endDate) {
+            //alert("SD: " + startDate + " ED: " + endDate);
+            let count = 0;
+            let sDate = new Date(startDate);
+
+            while (sDate < endDate) {
+                if (!((sDate.getDay() == "0") || (sDate.getDay() == "6") || (noSchoolDatesString.includes(sDate.toDateString())))) {
+                    count++;
+                    //alert(count + " " + (sDate < endDate) + "  " + sDate);
+                    //console.log(sDate.getDay());
+                }
+                sDate.setDate(sDate.getDate() + 1);
+            }
+            //console.log(sDate.getDay() + "      " + count);
+            return count;
+        }
+
+        $('.dropdown').click(function() {
+            $(this).attr('tabindex', 1).focus();
+            $(this).toggleClass('active');
+            $(this).find('.dropdown-menu').slideToggle(300);
+        });
+        $('.dropdown').focusout(function() {
+            $(this).removeClass('active');
+            $(this).find('.dropdown-menu').slideUp(300);
+        });
+        $('.dropdown .dropdown-menu li').click(function() {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+            changeSection(ddm.parents('.dropdown').find('input').val());
+        });
+
+        var dropdown_this;
+        var rawInput = "";
+        $('.dropdown-menu li').click(function() {
+            //var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+            //msg = '<span class="msg">Hidden input value: ';
+            //$('.msg').html(msg + input + '</span>');
+            dropdown_this = $(this);
+            rawInput = $(this).parents('.dropdown').find('input').val();
+        });
+
+    </script>
+</body>
+
+</html>
