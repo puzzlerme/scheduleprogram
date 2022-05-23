@@ -22,10 +22,10 @@
       2. Go to infinityfree.net and then click “Client Area”
       3. Click “Free SSL Certificates”
       4. Click “New SSL Certificate”
-      5. Enter the domain name without the “https:/www.”
-      6. Click “Check Domain”
-      7. The preferred free subdomain (for a paid custom domain, it may be different) provider that infinityfree offers is ZeroSSL. If for some reason it’s not available, use GoGetSSL or any other free subdomain SSL provider - ZeroSSL just makes renewable easy.
-      8. If you either don’t have a SSL certificate previously installed or you didn’t use ZeroSSL, follow these steps, otherwise skip ahead
+      5. Enter the domain name without the “ht<span>tp://</span>w<span>ww.</span>”
+      7. Click “Check Domain”
+      8. The preferred free subdomain (for a paid custom domain, it may be different) provider that infinityfree offers is ZeroSSL. If for some reason it’s not available, use GoGetSSL or any other free subdomain SSL provider - ZeroSSL just makes renewable easy.
+      9. If you either don’t have a SSL certificate previously installed or you didn’t use ZeroSSL, follow these steps, otherwise skip ahead
          1. Go to your account and click “Control Panel”
          2. In the search box (not the search for new domain box), search for “CNAME”
          3. Click on “CNAME Records”
@@ -33,16 +33,16 @@
          5. Go to the SSL provider tab and copy the “Record Name” text
          6. Go to the CNAME tab and paste it into the “Record Name” box
          7. Repeat the previous two steps but copy the “Destination” text and paste it into the “Destination” box
-      9. Click “Verify Domain” - this may take several hours, so reload every now and then (you should also get an email) and once it loads, continue with the next steps
-      10. Open a new tab (not needed, but recommended), and go to your account
-      11. Click “Control Panel”
-      12. In the search box (not the search for new domain box), search for “SSL”
-      13. Click on “SSL/TLS”
-      14. Under “Configure SSL,” click “Configure”
-      15. Go back to the SSL provider tab and click “Show” for the Private Key and Certificate
-      16. Copy the entire private key (including the “-----BEGIN PRIVATE KEY-----” and “-----END PRIVATE KEY-----” and paste it into the Private Key textbox in the SSL/TLS tab
-      17. Click “Upload Key”
-      18. Repeat the two previous steps but with the certificate instead
+      10. Click “Verify Domain” - this may take several hours, so reload every now and then (you should also get an email) and once it loads, continue with the next steps
+      11. Open a new tab (not needed, but recommended), and go to your account
+      12. Click “Control Panel”
+      13. In the search box (not the search for new domain box), search for “SSL”
+      14. Click on “SSL/TLS”
+      15. Under “Configure SSL,” click “Configure”
+      16. Go back to the SSL provider tab and click “Show” for the Private Key and Certificate
+      17. Copy the entire private key (including the “-----BEGIN PRIVATE KEY-----” and “-----END PRIVATE KEY-----” and paste it into the Private Key textbox in the SSL/TLS tab
+      18. Click “Upload Key”
+      19. Repeat the two previous steps but with the certificate instead
    3. How to add normal and custom schedules
       1. There are normal schedules (8A/8B/7A/7B/6A/6B/5A/5B) which have a dropdown to choose from and custom schedules (eg. Chiang) which have a button (top right) which when clicked lets you input text
       2. Part 1: Code
