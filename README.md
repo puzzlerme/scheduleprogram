@@ -1,5 +1,4 @@
-# scheduleprogram
-Schedule Program
+# How to Install Schedule Program
 
 1. Website
    1. How to use infinityfree for free hosting if needed
