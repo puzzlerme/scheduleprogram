@@ -11,7 +11,7 @@
       7. I would recommend against changing the default password, but feel free to change the Account Label
       8. Click “Create Account” - it may take a little while to fully create everything
       9. Whenever I mention “go into your account” or something similar, that means you go to infinityfree.net, click on “Client Area,” then click “Manage” on your account
-      10. Download the files
+      10. Download the "htdocs" file from this GitHub
       11. Go into your account and click “Control Panel” to enable your File Manager
       12. Go back into your account and click “File Manager”
       13. Remove the “htdocs” folder
