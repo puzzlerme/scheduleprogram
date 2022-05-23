@@ -1,4 +1,4 @@
-# How to Install Schedule Program
+# How to Create Your Own Schedule Program
 
 1. Website
    1. How to use infinityfree for free hosting if needed
