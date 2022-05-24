@@ -72,8 +72,17 @@
       3. Change “var noSchoolDates = ” to have “[new Date(year, month (starts at 0), day), repeat this but with other dates];” but replace the year, month (starts at 0), and day with any skipped days and replace “repeat this but with other dates” with the same as above if there are multiple skipped days
          1. eg. var noSchoolDates = [new Date(2022, 4, 30), new Date(2022, 3, 30)];
          2. This example treats the date 5/30/2022 and 4/30/2022 as weekends where the letter doesn’t change even though it’s a weekday
-   6. How to add new themes
-      1. This is a feature to allow creation of new themes (such as dark and light)
+   6. How to add/remove/modify settings
+      1. Settings for the website are kept in a single localStorage object (custom code). The only two settings not kept in that object are themeName and storageSection
+      2. Go into the main file (index.html) and find the text that says var localSettings = localStorage.getObj('settings') || new Array” (possibly using command + f)
+      3. The "new Array" includes the default settings
+      4. If you want to add/remove/modify any, just change the "new Array" in that line and two lines underneath it to have the new defaults
+      5. Change the line between the two "new Array"s to have the number that is in "length != NUMBER" to be equal to the number of settings in that object
+      6. Use the following code to change settings in the program:
+         1. localSettings[INDEX] = NEWVALUE; where INDEX is the index of the setting changed and NEWVALUE is the new value it's equal to
+         2. localStorage.setObj('settings', localSettings);
+   8. How to add/remove/modify themes
+      1. Themes can be created (such as dark and light)
       2. Go into the main file (index.html) and find the text that says “var themes = {” (possibly using command + f)
       3. Copy what I did with a Christmas theme (doesn't automatically activate and can only be viewed by modifying the localStorage and looks terrible) but change the name and change the hex codes to whatever colors you want
       4. To remove a theme, just delete it from the list
@@ -82,7 +91,7 @@
       7. To set the theme in the code, run:
          1. "localStorage.setItem("themeName", "dark");
          2. __setTheme("THEMENAME");
-   8. How to set up optional side images
+   9. How to set up optional side images
       1. There is a feature where if you add “?imagefolder=” and then an predetermined name to the end of the url, it will show a random image from that name’s folder
       2. Create as many folders as you want (under the htdocs folder) with different names and fill them with whatever images you want as long as they all have the same format (different folders can have different formats)
       3. Rename the files inside the folder with this format: “image#” with # being a number (increasing, starting at 0)
