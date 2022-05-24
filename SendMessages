@@ -1,0 +1,28 @@
+#!/bin/bash
+
+quit () {
+    osascript -e 'tell application "Terminal" to close (every window whose name contains ".command")' & exit
+    osascript -e 'tell application "Terminal" to close first window' & exit
+    osascript -e 'tell application "Terminal" to close first window' & exit
+    osascript -e "do shell script \"osascript -e \\\"tell application \\\\\\\"Terminal\\\\\\\" to quit\\\" &> /dev/null &\""; exit
+}
+
+phoneNumberList=(6509540151 4088383301 6504836076 6506450091 6503148990 6502887766 6507997089 4088285945 6506665913 6508019046 6504451265 4084709927 6502503437 6505461615)
+sectionList=(8B 8B 8A 8B 8B 8B 8A 8A 8A 8B 8B 8B 8B 8B)
+#nameList=(Max ClaireY Isaac Bryn JP Shen Henry Camilo Sophia Anya Katie Oliver Dylan MorganT)
+#phoneNumberList=(6509540151 6509540151)
+#sectionList=(8A 8B)
+
+message=$(date '+%A, %B %-Oe')
+
+letterDay="$(/usr/local/bin/node /Users/maxe2/Desktop/getLetterDay.js)"
+#echo "${letterDay}" >> "/Users/maxe2/Desktop/filePath.txt"
+#export letterDay
+
+for ((i=0; i < ${#phoneNumberList[@]}; i++))
+do
+
+	filePath="/Users/maxe2/Desktop/"${sectionList[$i]}" Schedule/"${sectionList[$i]}" Schedule "${letterDay}" Day.jpg"
+	osascript -e "tell application\"Messages\" to send POSIX file \"${filePath}\" to buddy \"${phoneNumberList[$i]}\"";
+	osascript -e "tell application\"Messages\" to send \"${message}\" to buddy \"${phoneNumberList[$i]}\"";
+done
