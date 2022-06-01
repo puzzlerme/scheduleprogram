@@ -111,3 +111,7 @@
    5. Explain how to install node (I think that’s necessary)
    6. Explain how to create the automatic computer startup
    7. Show how to setup the launchd file
+      1. INSTRUCTIONS NEEDED (download the file and run some commands that I need to put into the instructions)
+      2. To load and unload (turn it on and off) the launchd file (that runs the SendMessages file at a certain time):
+         1. sudo launchctl load -w /Library/LaunchDaemons/launched.sendmessages.plist
+         2. sudo launchctl unload -w /Library/LaunchDaemons/launched.sendmessages.plist
