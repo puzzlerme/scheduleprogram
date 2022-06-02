@@ -21,7 +21,7 @@
       1. SSL is what makes your website secure and lets it use “https” instead of “http”
       2. Go to infinityfree.net and then click “Client Area”
       3. Click “Free SSL Certificates”
-      4. If you either don’t have a SSL certificate previously installed or you didn’t use ZeroSSL, follow these steps, otherwise skip ahead
+      4. If you don’t have a renewable SSL certificate (such as ZeroSSL) previously installed, follow these steps, otherwise skip ahead
          1. Click “New SSL Certificate”
          2. Enter the domain name without the “ht<span>tp://</span>w<span>ww.</span>”
          3. Click “Check Domain”
@@ -33,9 +33,12 @@
          9. Go to the SSL provider tab and copy the “Record Name” text
          10. Go to the CNAME tab and paste it into the “Record Name” box
          11. Repeat the previous two steps but copy the “Destination” text and paste it into the “Destination” box
-      5. If you used ZeroSSL (or another renewable one), follow these steps, otherwise skip ahead
-         1. Find the previous ZeroSSL (or other renewable) SSL certificate and click "Install"
+      5. If you used ZeroSSL (or another renewable SSL provider), follow these steps, otherwise skip ahead
+         1. Find the previous ZeroSSL (or other renewable provider's) SSL certificate and click "Install"
          2. Click "Renew"
+         3. Enter the domain name without the “ht<span>tp://</span>w<span>ww.</span>”
+         4. Click “Check Domain”
+         5. Click "Choose Provider" under ZeroSSL (or another renewable SSL provider)
       6. Click “Verify Domain” - this may take several hours, so reload every now and then (you should also get an email) and once it loads, continue with the next steps
       7. Open a new tab (not needed, but recommended), and go to your account
       8. Click “Control Panel”
