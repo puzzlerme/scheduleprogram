@@ -6,7 +6,7 @@
 	<string>launched.sendmessages</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/maxe2/Desktop/SendMessages</string>
+		<string>/Users/USERNAME/Desktop/SendMessages</string>
 	</array>
 	<key>StartCalendarInterval</key>
 	<array>
