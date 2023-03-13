@@ -110,14 +110,16 @@
          2. The example has the folder name AC containing jpeg photos and the folder name AC2 containing jpg photos
       7. Now if you go to your domain with “?imagefolder=” and the chosen folder at the end, it will pick a random image from that folder to show (new one every time you reload the website)
 2. Messages program
-   1. Show how to setup all needed permissions (check which ones are actually needed, don't forget sleep)
-   2. Explain how to change the phone numbers being sent to and the section
-   3. Explain how to get the images (a bit tedious)
-   4. Explain how to get the file placement all setup
-   5. Explain how to install node (I think that’s necessary)
-   6. Explain how to create the automatic computer startup
-   7. Show how to setup the launchd file
-      1. INSTRUCTIONS NEEDED (download the file and run some commands that I need to put into the instructions)
-      2. To load and unload (turn it on and off) the launchd file (that runs the SendMessages file at a certain time):
-         1. sudo launchctl load -w /Library/LaunchDaemons/launched.sendmessages.plist
-         2. sudo launchctl unload -w /Library/LaunchDaemons/launched.sendmessages.plist
+   1. Instructions incomplete currently
+   2. Future instructions will include
+      1. How to setup all needed permissions (check which ones are actually needed, don't forget sleep)
+      2. Explain how to change the phone numbers being sent to and the section
+      3. Explain how to get the images (a bit tedious)
+      4. Explain how to get the file placement all setup
+      5. Explain how to install node
+      6. Explain how to create the automatic computer startup
+      7. Show how to setup the launchd file
+         1. INSTRUCTIONS NEEDED (download the file and run some commands that I need to put into the instructions)
+         2. To load and unload (turn it on and off) the launchd file (that runs the SendMessages file at a certain time):
+            1. sudo launchctl load -w /Library/LaunchDaemons/launched.sendmessages.plist
+            2. sudo launchctl unload -w /Library/LaunchDaemons/launched.sendmessages.plist
